@@ -11,12 +11,11 @@ const Main = () => {
         <Header />
         <Artistasimi />
         <ListenAgain />
-        <Artists />
         <QuickPicks />
         <PlaybackBar />
         <Recomendacion />
       </div>
     );
   };
-  
-  export default Main;
+
+export default Main;

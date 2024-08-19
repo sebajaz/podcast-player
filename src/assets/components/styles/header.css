@@ -1,0 +1,13 @@
+.playbar img {
+    /* position: fixed;
+    bottom: 0;*/
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    /*max-height: 200px;/*
+    /*justify-content: center;
+    max-height: 200px;
+    background-color: #333; 
+    z-index: 1000; */
+  }

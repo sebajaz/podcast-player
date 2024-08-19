@@ -1,5 +1,6 @@
 import React from 'react';
-import Main from './assets/components/main';
+import Main from './main';
+
 
 const App= () => {
   return (

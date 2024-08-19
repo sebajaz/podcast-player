@@ -1,10 +1,23 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+import React from "react";
+import Artistasimi from "./assets/components/artistassimilares";
+import Header from "./assets/components/header";
+import ListenAgain from "./assets/components/listenagain";
+import QuickPicks from "./assets/components/quickpicks";
+import PlaybackBar from "./assets/components/playbackbar";
+import Recomendacion from "./assets/components/recomendados";
+const Main = () => {
+    return (
+      <div className="App"> 
+        <Header/>
+        <div className="main-content">
+          <Artistasimi />
+          <ListenAgain />
+          <QuickPicks />
+          <Recomendacion />
+        </div>
+        <PlaybackBar/>
+      </div>
+    );
+  };
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+export default Main;
