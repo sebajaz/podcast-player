@@ -1,12 +1,18 @@
 import React from "react";
-import { gustossimilares } from "./data/data";
+import { similar } from "./data/data";
 const QuickPicks= ()=>{
     return (
-        <section className="gustsimilares"> 
+        <section className="repetir"> 
             <h2> Gustos Similares </h2>
-            <ul> {gustossimilares.map((gustossimilares)=>(
-                <li key={gustossimilares.id}> {gustossimilares.nombre} </li>
-            ))}
+            <ul className="columnas">
+                {similar.map((similar)=>(
+                    <li key={similar.id}>  
+                    <img src={similar.imagen} className="fotos"/>
+                        <div className="info">
+                            {similar.nombre} {similar.artista}
+                        </div>
+                    </li>
+                ))}
             </ul>
         </section>
     )

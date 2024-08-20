@@ -10,10 +10,10 @@ const Main = () => {
       <div className="App"> 
         <Header/>
         <div className="main-content">
-          <Artistasimi />
           <ListenAgain />
           <QuickPicks />
           <Recomendacion />
+          <Artistasimi />
         </div>
         <PlaybackBar/>
       </div>
