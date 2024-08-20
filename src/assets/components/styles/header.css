@@ -1,0 +1,81 @@
+.playbar {
+    background-color: white;
+    width: auto;
+    height: auto;
+    /*z-index: 1000;
+    position: fixed;
+    bottom: 0;*/
+  }
+
+.imagen {
+  width: 80px;
+  height: auto;
+  margin-right: 100px;
+  margin-left: 50px;
+}
+
+.perfill {
+  width: 100px;
+  height: auto;
+  position: relative;
+  top: 10px;
+  left: 900px;
+}
+
+.busqueda {
+  height: 30px;
+  width: 500px;
+  margin-bottom: 30px;
+  position: absolute;
+  top: 60px;
+  background-color: rgb(0, 0, 0, 0.8);
+}
+
+.header {
+  background-color: rgba(219, 9, 9, 0.8);
+}
+
+.fotos {
+  width: 200px;
+  height: auto;
+  margin: 30px;
+}
+
+.repetir {
+  font-family: "Roboto","Arial",sans-serif;
+}
+
+.columnas {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.info {
+  margin-left: 30px;
+}
+
+html {
+  color: white;
+  background-color: black;
+}
+
+.barra {
+  display: inline-block; 
+  margin-left: 260px; 
+  width: 40px; 
+  height: auto; 
+  justify-content: center;
+  justify-items: center;
+}
+
+.barratiempo {
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-left: 425px;
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+
