@@ -5,7 +5,6 @@ import on from "../images/on.png";
 import adelante from "../images/adelante.png";
 import musica from "../images/musica.png";
 import volume from "../images/volumen.png";
-import listarepro from "../images/listaderepro.png";
 import tiempo from "../images/tiempo.png";
 
 const PlaybackBar=() =>{
