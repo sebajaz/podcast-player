@@ -1,20 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { repetirdenuevo } from "./data/data";
-const ListenAgain=()=>{
+import fetchPodcast from "../services/audioServices";
+const ListenAgain = () => {
+    const [reproductor, setReproductor] = useState ([]);
+
+    useEffect (() => {
+        const cargaReproductor = async () => {
+            const data = await fetchPodcast ();
+            setReproductor(data)
+
+        }
+    cargaReproductor()
+
+
+    },[]) 
     return (
-        <section className="repetir">
-            <h2> Escuchar de nuevo </h2>
-            <ul className="columnas">
-                {repetirdenuevo.map((repetirdenuevo)=>(
-                    <li key={repetirdenuevo.id}>  
-                    <img src={repetirdenuevo.imagen} className="fotos"/>
-                        <div className="info">
-                            {repetirdenuevo.nombre} {repetirdenuevo.artista}
-                        </div>
-                    </li>
-                ))}
-            </ul>
-        </section>
+        <div>
+            {reproductor.map(reproductor => (
+                <div key = {reproductor.id}>
+                    <img 
+                    src={reproductor.channel.urls.logo_image.original}
+                    alt="similar"
+                    />
+                    <p>
+                        {reproductor.title}
+                    </p>
+                </div>
+            ))}
+        </div>
     )
 };
+
 export default ListenAgain;
