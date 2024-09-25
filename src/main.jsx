@@ -1,26 +1,31 @@
-import React, { useState } from "react";
-import Artistasimi from "./assets/components/artistassimilares";
+import React, { useEffect, useState } from "react";
 import Header from "./assets/components/header";
-import ListenAgain from "./assets/components/listenagain";
-import QuickPicks from "./assets/components/quickpicks";
-import PlaybackBar from "./assets/components/playbackbar";
-import Recomendacion from "./assets/components/recomendados";
-import Inputs from "./assets/components/modal-content";
-import ListaPlaylist from "./assets/components/playlist";
-import PGuardadas from "./assets/components/playlistguardadas";
+import ListaPodcast from "./assets/components/listapodcast";
+import PlayBackBar from "./assets/components/playbackbar";
+
 
 const Main = () => {
+  const [podcasts, setPodcasts] = useState([]);
+  const [suenaPodcast, setSuenaPodcast] = useState(null);
+
+  useEffect(() => {
+    fetch('https://api.audioboom.com/audio_clips')
+    .then((response) => response.json())
+    .then((data) => {
+      setPodcasts(data.body.audio_clips)
+    })
+    .catch((error) => console.error("ERROR EN FETCH", error))
+  }, []) 
+  const handlePodcastClick = (podcast) => {
+    setSuenaPodcast(podcast.urls.high_mp3)
+  }
     return (
-      <div className="App"> 
+      <div>
         <Header/>
-        <div className="main-content">
-          <PGuardadas />
-          <ListenAgain />
-          <QuickPicks />
-          <Recomendacion />
-          <Artistasimi />
+        <div>
+          <ListaPodcast podcasts={podcasts} PodcastClick={handlePodcastClick}/>
         </div>
-        <PlaybackBar/>
+        {suenaPodcast && <PlayBackBar audioUrl={suenaPodcast}/>}
       </div>
     );
   };

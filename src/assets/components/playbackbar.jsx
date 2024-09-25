@@ -1,22 +1,12 @@
-import React from "react";
-import "./styles/header.css";
-import atras from "../images/atras.png";
-import on from "../images/on.png";
-import adelante from "../images/adelante.png";
-import musica from "../images/musica.png";
-import volume from "../images/volumen.png";
-import tiempo from "../images/tiempo.png";
+import React, { useRef } from "react";
 
-const PlaybackBar=() =>{
+const PlayBackBar = ({audioUrl}) => {
+    const audioRef = useRef (null);
     return (
-        <div className="playbar"> 
-            <img src={tiempo} className="barratiempo"/>
-            <img src={musica} className="barra"/>
-            <img src={atras} className="barra"/>
-            <img src={on} className="barra"/>
-            <img src={adelante} className="barra"/>
-            <img src={volume} className="barra"/>
+        <div className="playbar">
+            <audio ref={audioRef} src={audioUrl} controls/>
         </div>
     )
-};
-export default PlaybackBar;
+}
+
+export default PlayBackBar;
