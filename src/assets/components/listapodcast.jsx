@@ -9,7 +9,7 @@ const ListaPodcast = ({ podcasts }) => {
     if (texto.length > limite) {
       return texto.slice(0, limite) + "...";
     }
-    return texto;
+    return texto
   };
 
   const podcastClick = (podcast) => {
